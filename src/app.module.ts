@@ -7,17 +7,17 @@ import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRootAsync(
-      // type: 'mysql',
-      // host: 'localhost',
-      // port: 3309,
-      // username: 'root',
-      // password: 'password',
-      // database: 'user',
-      // entities: [User], // provide all the entites her inside the array
-      // synchronize: true,
-      typeOrmConfigAsync
-    ),
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: 'localhost',
+    //   port: 3309,
+    //   username: 'root',
+    //   password: 'password',
+    //   database: 'user',
+    //   entities: [User], // provide all the entites her inside the array
+    //   synchronize: true,
+    // }),
+    TypeOrmModule.forRootAsync(typeOrmConfigAsync),
     GraphQLModule.forRoot({
       autoSchemaFile: true
     }),
